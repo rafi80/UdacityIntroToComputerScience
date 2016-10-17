@@ -24,7 +24,7 @@ index = []
 #===============================================================================
 #Udacity            
 def add_to_index(index,keyword,url):
-    for element in  index:
+    for element in index:
         if element[0] ==keyword:
             element[1].append(url)
             return
