@@ -47,12 +47,14 @@ def union(lista1, lista2):
     return lista1
 
 
-def add_to_index(index,keyword,url):
+def add_to_index(index, keyword, url):
     for entry in index:
         if entry[0] == keyword:
-            entry[1].append(url)
+            if not url in entry[1]:
+                entry[1].append(url)
             return
-    index.append([keyword,[url]])
+        # not found, add new keyword to index
+    index.append([keyword, [url]])
 
 
 def add_page_to_index(index,url,content):
